@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        background-color: rgb(23, 23, 22);
+        margin-bottom: 0;
+        margin-top: 0;
+        color: white;
+        -webkit-text-stroke: 3px wheat;
+      }
+      .container {
+        display: flex;
+        height: 80vh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        margin-top: 0;
+        background-color: rgb(117, 119, 123);
+      }
+      .calculator {
+        background: rgb(83, 81, 88);
+        padding: 20px;
+        border-radius: 20px;
+        height: 55vh;
+        width: 43vh;
+        box-shadow: 5px 5px 50px rgb(13, 12, 11);
+
+        border: 6px solid black;
+      }
+      .calculator form input {
+        color: rgb(247, 244, 242);
+        font-size: 35px;
+        font-weight: 900;
+
+        margin: 2px 2px;
+        border: 0;
+        outline: 0;
+        font-size: 20px;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 64px;
+        height: 50px;
+        box-shadow: -6px -6px 15px rgb(16, 19, 24), 4px 4px 15px rgb(46, 54, 59);
+      }
+      .calculator form input:hover {
+        border: 2px solid wheat;
+      }
+      .calculator form input.dis {
+        background-color: rgb(41, 50, 58);
+      }
+      .calculator form input.equals {
+        width: 130px;
+        font-weight: 900;
+      }
+      form .display {
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0px;
+      }
+      form .display input {
+        text-align: right;
+        box-shadow: none;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; font-size: 80px">
+      Welcome To Digital Calculator
+    </h1>
+
+    <div class="container">
+      <div class="calculator">
+        <form action="">
+          <div class="display">
+            <input type="text" name="display" class="dis" />
+          </div>
+          <div>
+            <input type="button" value="AC" onclick="display.value =''" />
+            <input
+              type="button"
+              value="DE"
+              onclick="display.value=display.value.toString().slice (0,-1)"
+            />
+            <input type="button" value="." onclick="display.value +='.'" />
+            <input type="button" value="/" onclick="display.value +='/'" />
+          </div>
+          <div>
+            <input type="button" value="7" onclick="display.value +='7'" />
+            <input type="button" value="8" onclick="display.value +='8'" />
+            <input type="button" value="9" onclick="display.value +='9'" />
+            <input type="button" value="-" onclick="display.value +='-'" />
+          </div>
+          <div>
+            <input type="button" value="4" onclick="display.value +='4'" />
+            <input type="button" value="5" onclick="display.value +='5'" />
+            <input type="button" value="6" onclick="display.value +='6'" />
+            <input type="button" value="+" onclick="display.value +='+'" />
+          </div>
+          <div>
+            <input type="button" value="1" onclick="display.value +='1'" />
+            <input type="button" value="2" onclick="display.value +='2'" />
+            <input type="button" value="3" onclick="display.value +='3'" />
+            <input type="button" value="X" onclick="display.value +='*'" />
+          </div>
+          <div>
+            <input type="button" value="00" onclick="display.value+='00'" />
+            <input type="button" value="0" onclick="display.value+='0'" />
+            <input
+              type="button"
+              value="="
+              class="equals"
+              onclick="display.value=eval(display.value)"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
